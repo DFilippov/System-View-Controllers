@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,91 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="System_View_Controllers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="7AY-8g-bOK">
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="v7I-10-gYx">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="369"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vg4-Dl-BuU">
+                                        <rect key="frame" x="0.0" y="409" width="374" height="369"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zsa-60-She">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjQ-E9-jQk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                                        <state key="normal" title="Share"/>
+                                                        <connections>
+                                                            <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEw-FX-HJT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrc-2v-hRK">
+                                                        <rect key="frame" x="75" y="0.0" width="74.5" height="30"/>
+                                                        <state key="normal" title="Safari"/>
+                                                        <connections>
+                                                            <action selector="safariButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h6j-RR-llr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlD-VD-Ve6">
+                                                        <rect key="frame" x="149.5" y="0.0" width="75" height="30"/>
+                                                        <state key="normal" title="Camera"/>
+                                                        <connections>
+                                                            <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hsP-Kx-0FO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqp-uu-WC8">
+                                                        <rect key="frame" x="224.5" y="0.0" width="74.5" height="30"/>
+                                                        <state key="normal" title="Email"/>
+                                                        <connections>
+                                                            <action selector="emailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="119-sc-gqr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2i-sX-87l" userLabel="Message">
+                                                        <rect key="frame" x="299" y="0.0" width="75" height="30"/>
+                                                        <state key="normal" title="Message"/>
+                                                        <connections>
+                                                            <action selector="emailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNU-EQ-cFJ"/>
+                                                            <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEG-RB-Wo4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zsa-60-She" firstAttribute="top" secondItem="vg4-Dl-BuU" secondAttribute="top" id="6kv-yl-cah"/>
+                                            <constraint firstItem="zsa-60-She" firstAttribute="leading" secondItem="vg4-Dl-BuU" secondAttribute="leading" id="EGQ-Jr-Y7I"/>
+                                            <constraint firstAttribute="trailing" secondItem="zsa-60-She" secondAttribute="trailing" id="cgX-cr-gGe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7AY-8g-bOK" secondAttribute="trailing" constant="20" id="GZT-9p-pXo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7AY-8g-bOK" secondAttribute="bottom" constant="20" id="KYu-Hn-qTS"/>
+                            <constraint firstItem="7AY-8g-bOK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="L7V-Rx-t1P"/>
+                            <constraint firstItem="7AY-8g-bOK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yzT-Kd-miR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="v7I-10-gYx" id="1L4-Lo-182"/>
+                        <outlet property="stackView" destination="7AY-8g-bOK" id="WiF-fZ-2dc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="flower" width="670" height="419"/>
+    </resources>
 </document>
