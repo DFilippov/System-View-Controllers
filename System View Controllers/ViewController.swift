@@ -112,24 +112,33 @@ class ViewController: UIViewController {
             print(#line, #function, "Device is not set up to handle messages")
             return
         }
-        guard MFMessageComposeViewController.canSendSubject() else {
-            print(#line, #function, "Device is not set up to send subjects")
-            return
-        }
-        guard MFMessageComposeViewController.canSendAttachments() else {
-            print(#line, #function, "Device is not set up to send attachments")
-            return
-        }
 
         let messageComposer = MFMessageComposeViewController()
         messageComposer.messageComposeDelegate = self
 
         messageComposer.recipients = ["9021906316"]
         messageComposer.body = "Cheers! User!"
-
+        
         present(messageComposer, animated: true)
+        
+        guard MFMessageComposeViewController.canSendAttachments() else {
+            print(#line, #function, "Device is not set up to send attachments")
+            return
+        }
+        
+        let pathToFile = FileManager.default.temporaryDirectory
+        if let image = UIImage(named: "flower.jpg") {
+            if let data = image.jpegData(compressionQuality: 1.0) {
+                let filename = pathToFile.appendingPathComponent("copy.jpg")
+                try? data.write(to: filename)
+            }
+        }
+        guard let attachmentData = try? Data(contentsOf: pathToFile.appendingPathComponent("copy.jpg")) else {
+            print(#line, #function, "No attachment data")
+            return }
+        
+        messageComposer.addAttachmentData(attachmentData, typeIdentifier: "public.jpeg", filename: "copy.jpg")
     }
-    
 }
 
 // MARK: - UIImagePickerControllerDelegate

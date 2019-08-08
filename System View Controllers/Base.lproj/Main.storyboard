@@ -62,7 +62,6 @@
                                                         <rect key="frame" x="299" y="0.0" width="75" height="30"/>
                                                         <state key="normal" title="Message"/>
                                                         <connections>
-                                                            <action selector="emailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNU-EQ-cFJ"/>
                                                             <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEG-RB-Wo4"/>
                                                         </connections>
                                                     </button>
